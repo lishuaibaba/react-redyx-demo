@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from "react-redux";
-import { creatIncrementAction, creatDecrementAction, creatIncrementAsyncAction } from "../../redux/count_action"
+import { creatIncrementAction, creatDecrementAction, creatIncrementAsyncAction } from "../../redux/actions/count"
 
 class Count extends Component {
 
@@ -46,7 +46,7 @@ class Count extends Component {
 }
 
 export default connect(
-    state => ({ count: state }),
+    state => ({ count: state.count }),
     {
         addCount: creatIncrementAction,
         removeCount: creatDecrementAction,

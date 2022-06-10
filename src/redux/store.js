@@ -1,5 +1,13 @@
-import { legacy_createStore as createStore,applyMiddleware } from "redux";
-import countReducer from "./count_reducer"
+import { legacy_createStore as createStore,applyMiddleware,combineReducers } from "redux";
+import countReducer from "./reducers/reducer"
+import personReducer from "./reducers/person"
 import thunk from "redux-thunk"
 
-export default createStore(countReducer,applyMiddleware(thunk));
+const allReducer = combineReducers(
+    {
+        count:countReducer,
+        personAll:personReducer
+    }
+)
+
+export default createStore(allReducer,applyMiddleware(thunk));

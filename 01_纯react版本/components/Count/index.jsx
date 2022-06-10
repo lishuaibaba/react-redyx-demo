@@ -19,7 +19,7 @@ export default class Count extends Component {
     })
   }
   incrementIfOdd = () => {
-    if (this.state.count % 2 !== 0) {
+    if (this.state.count % 2 != 0) {
       this.setState({
         count: this.state.count + Number(this.selectNumber.value)
       })
